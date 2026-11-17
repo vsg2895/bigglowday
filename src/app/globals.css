@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+/*
+ * Big Glow Day — the palette and type of docs/design/*.dc.html. The values
+ * are the design's own; the storefront uses them through Tailwind tokens
+ * (bg-bg, text-muted, border-line…) and copies the design's px sizes as
+ * arbitrary values where a token would hide them.
+ */
+@theme {
+  --color-bg: #0f0f14;
+  --color-surface: #18181f;
+  --color-surface-2: #22222b;
+  --color-line: #2e2e3a;
+  --color-line-soft: #6b6878;
+  --color-ink: #f3f1f6;
+  --color-muted: #a8a5b5;
+  --color-accent: var(--accent, #d6f25c);
+  --color-secondary: #b9a6ff;
+  --font-sans: var(--font-inter), Inter, system-ui, sans-serif;
+  --font-display: var(--font-instrument), "Instrument Serif", Georgia, serif;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: #0f0f14;
+  color: #f3f1f6;
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+a {
+  color: #f3f1f6;
+  text-decoration: none;
+}
+a:hover {
+  color: var(--accent, #d6f25c);
+}
+
+/* Native controls on the dark ground, as the design's inline styles set them. */
+input[type="search"],
+input[type="number"],
+select {
+  color: #f3f1f6;
+  font: inherit;
+}
+input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--accent, #d6f25c);
+}
+
+/* Rich text from the admin (page bodies, descriptions). */
+.prose-store p { margin: 0 0 1em; }
+.prose-store h2, .prose-store h3 { font-family: var(--font-display); font-weight: 400; line-height: 1.1; margin: 1.6em 0 0.6em; }
+.prose-store h2 { font-size: 30px; }
+.prose-store h3 { font-size: 24px; }
+/* Tailwind's reset strips list markers; admin-written copy needs them back. */
+.prose-store ul, .prose-store ol { margin: 0 0 1em; padding-left: 1.4em; }
+.prose-store ul { list-style: disc; }
+.prose-store ol { list-style: decimal; }
+.prose-store li { margin: 0 0 0.4em; }
+.prose-store li::marker { color: var(--accent, #d6f25c); }
+.prose-store a { text-decoration: underline; text-underline-offset: 4px; }
+.prose-store strong { font-weight: 600; }
