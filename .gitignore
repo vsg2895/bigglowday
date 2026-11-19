@@ -33,6 +33,12 @@ yarn-error.log*
 # env files (can opt-in for committing if needed)
 .env*
 
+# Production deployment files — Dockerfile, docker-compose.yml, .dockerignore
+# and the real .env. Kept OUT of the repo on purpose: they are edited by hand
+# on the server, so a committed copy would be a second source of truth that
+# silently drifts from the one actually running.
+prod-ready/
+
 # vercel
 .vercel
 

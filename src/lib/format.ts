@@ -38,7 +38,7 @@ const TOKENS: (keyof PerfumeSettings)[] = [
 
 /**
  * Fill `{token}` holes from the settings. A SENTENCE whose token is empty is
- * dropped rather than printed with a hole — "Springfield: , free from ." is
+ * dropped rather than printed with a hole — "Columbus: , free from ." is
  * worse than no sentence — and a text left with nothing returns null so the
  * caller can hide the element. The design's bracketed facts all go through
  * here.
