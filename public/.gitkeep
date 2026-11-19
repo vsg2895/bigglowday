@@ -1,0 +1,6 @@
+# Keeps `public/` in the repository while it holds no files.
+#
+# Git does not track empty directories, so without this the folder does not
+# exist in a fresh clone — and the Docker runner stage's
+# `COPY --from=builder /app/public ./public` fails with "not found" before the
+# image is built. Delete this file once public/ has real assets in it.
